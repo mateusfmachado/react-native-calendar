@@ -11,7 +11,10 @@ import PropTypes from 'prop-types';
 import Day from './Day';
 
 import moment from 'moment';
+import 'moment/locale/pt-br';
 import styles from './styles';
+
+moment.locale('pt-BR');
 
 const VIEW_INDEX = 2;
 
@@ -66,20 +69,20 @@ export default class Calendar extends Component {
 
   static defaultProps = {
     customStyle: {},
-    dayHeadings: ['S', 'M', 'T', 'W', 'T', 'F', 'S'],
+    width: DEVICE_WIDTH,
+    dayHeadings: ['D', 'S', 'T', 'Q', 'Q', 'S', 'S'],
     eventDates: [],
-    monthNames: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
-      'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-    nextButtonText: 'Next',
-    prevButtonText: 'Prev',
-    removeClippedSubviews: true,
+    monthNames: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun',
+      'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'],
+    nextButtonText: 'Próximo',
+    prevButtonText: 'Anterior',
     scrollEnabled: false,
     showControls: false,
     showEventIndicators: false,
     startDate: moment().format('YYYY-MM-DD'),
     titleFormat: 'MMMM YYYY',
+    today: moment(),
     weekStart: 1,
-    calendarFormat: 'monthly' // weekly or monthly
   };
 
   componentDidMount() {
